@@ -1,20 +1,11 @@
 <!DOCTYPE html>
 <html class="animated fadeIn">
-   <head>
-   
-      <style>
-	  		 @import url('https://fonts.googleapis.com/css?family=Zilla+Slab');
+	  <head>
+	  		<style>
+				   @import url('https://fonts.googleapis.com/css?family=Zilla+Slab');
 			 
-/*		 html {
-    opacity: 1;
-	background-color: white;
-   padding-bottom:1000px;
-   padding-left:inherit;
-   padding-right:inherit;
-   padding-top:inherit;
-}*/
           .important {
- 		  padding-top:15%;
+ 		  /*padding-top:15%;*/
  		  text-align:center;
  		  font-family:Zilla Slab;
  		  color:white;
@@ -28,6 +19,49 @@
  		  color:white;
  		  font-size:30px;
  		  }
+		  
+		  .lessimportantbody {
+ 		  text-align:center;
+ 		  font-family:Zilla Slab;
+ 		  color:white;
+ 		  font-size:30px;
+		  padding-top:150px;
+ 		  }
+		  
+		  .placeholder{
+		   padding-top:60px;
+		  height:100px;
+		  width=20%;
+		  text-align:center;
+		  border-radius:50%;
+		  background-color:#8000ff;
+		  font-color:#8000ff;
+		   }
+		  
+		  .toplinkdiv{
+		  padding-top:0%;
+		  text-align:center;
+		  width=20%;
+		  border-radius:50%;
+		  background-color:white;
+		   }
+		  
+		  .link {
+		  padding-top:70px;
+		  font-family:Zilla Slab;
+		  /*background-color:white;*/
+		  font-color:white;
+		  text-decoration:none;
+		  font-weight:800;
+	
+		   }
+
+		   .resize_fit_center {
+    max-width:30%;
+    max-height:30%;
+    vertical-align: middle;
+}
+
 
          .animated {
 			background-color: #8000ff;
@@ -61,11 +95,56 @@
    <body>
    
       <div id="animated-example" class="animated fadeIn">
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	  <script>
+	  $(document).ready(function(){
+  	  // Add smooth scrolling to all links
+  	  	 $("a").on('click', function(event) {
+		     if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});</script>
 	  
-	  	 <div id="top">
+	  
+	  	   <div style="width: 100%; display: table;">
+    <div style="display: table-row">
+        <div id="nav" style="display: table-cell; text-align:center; width:20%;"><img class='resize_fit_center' src='https://i.imgur.com/7uOJmQx.png' /><p style="position:relative; bottom:85px;"><a style="color:#8000ff" class=link href=#about>About me</a></p></div>
+        <div style="display: table-cell; text-align:center; width:20%;"><a style="color:#8000ff;" class=placeholderlink href=#about>About me</a></div>
+        <div style="display: table-cell; text-align:center; width:20%;"><img class='resize_fit_center' src='https://i.imgur.com/7uOJmQx.png' /><p style="position:relative; bottom:85px;"><a style="color:#8000ff" class=link href=#about>Projects</a></p></div>
+        <div style="display: table-cell; text-align:center; width:20%;"><a style="color:#8000ff;" class=placeholderlink href=#about>About me</a></div>
+        <div style="display: table-cell; text-align:center; width:20%;"><img class='resize_fit_center' src='https://i.imgur.com/7uOJmQx.png' /><p style="position:relative; bottom:85px;"><a style="color:#8000ff" class=link href=#about>Links</a></p></div>
+    </div>
+</div>
+	  
+		 
+		 
+	  
+	  	 <div id="me">
 	  	 <p class=important>Ethan Bensman</p>
 		 <p class=lessimportant>A student exploring opportunities</p>
 	  	 </div>
+		 
+		 <div id="about" class=lessimportantbody>
+		 	  <p>Hey! I'm a sophomore from Cincinnati, Ohio, studying computer science student at Clemson University. My CS interests are Machine Learning, Data Science, and Software Engineering. Outside of that, I love playing soccer, hanging out with friends, and sucking the helium out of balloons.</p>
+		 </div>
+		 
+		 <div id="projects"></div>
+		 <div id="links"></div>
 	  
 	  
 	  </div>
